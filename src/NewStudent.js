@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Button from "./Button";
 
 const NewStudent = ({ addNew }) => {
+  const classes = ["West Midlands 1", "London 7", "Manchester United"];
   const [studentName, setStudentName] = useState("");
   const [gitHubId, setGitHubId] = useState("");
+  const [studentClass, setStudentClass] = useState("");
   
 
   const submitForm = (e) => {
@@ -14,6 +16,9 @@ const NewStudent = ({ addNew }) => {
   };
   const holderGitHubId = (e) => {
     setGitHubId(e.target.value);
+  };
+  const holderClass = (e) => {
+    setStudentClass(e.target.value);
   };
 
   return (
@@ -38,6 +43,18 @@ const NewStudent = ({ addNew }) => {
           value={gitHubId}
           onChange={holderGitHubId}
         />
+        <br/>
+      <label for="studentClass">Class: </label>
+        <select
+           id="studentClass"
+          name="studentClass"
+          value={studentClass}
+          onChange={holderClass}
+        >
+          <option>Select class</option>
+          {classes.map(item => <option value={item}>{item}</option> )}
+        </select>
+
         <Button addNew={addNew} btnName="Submit" />
       </form>
     </div>
