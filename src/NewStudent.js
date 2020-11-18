@@ -8,6 +8,10 @@ const submitForm = (e) => {
   e.preventDefault();
   setStudentName(e.target.value);
 };
+const holderStudentName = (e) => {
+// e.preventDefault();
+  setStudentName(e.target.value);
+};
 
   return (
     <div className="moda">
@@ -16,6 +20,7 @@ const submitForm = (e) => {
     placeholder="Student name"
     name="studentName"
     value={studentName}
+    onChange={holderStudentName}
     />
     <Button addNew={addNew} btnName="Submit" />
     </form>
