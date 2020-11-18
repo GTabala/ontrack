@@ -1,11 +1,14 @@
 import React from "react";
 
-const Button = ({addNew, btnName}) => {
+const Button = ({ addNew, btnName, pageNumber }) => {
+  const action = () => {
+    pageNumber ? addNew(pageNumber) : addNew();
+  };
 
   return (
-    <div className="btn-add">
-<button className="btn btn-primary" onClick={addNew}>{btnName}</button>
-    </div>
+    <button className="btn btn-primary" onClick={action}>
+      {btnName}
+    </button>
   );
 };
 

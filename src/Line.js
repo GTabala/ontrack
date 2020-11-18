@@ -1,18 +1,17 @@
 import React from "react";
 
-
 const Line = ({ item, ind }) => {
-//   const [selected, setSelected] = useState("");
-//   const selectLine = e =>
-//     !e.target.name && setSelected(selected ? "" : "selected");
-//   const showProfile = () => {
-//     chooseProfile(item.id);
-//   };
-console.log(ind);
+  //   const [selected, setSelected] = useState("");
+  //   const selectLine = e =>
+  //     !e.target.name && setSelected(selected ? "" : "selected");
+  //   const showProfile = () => {
+  //     chooseProfile(item.id);
+  //   };
+  console.log(ind);
   return (
     <tr>
-    {/* onClick={selectLine} className={selected}> */}
-      <th scope="row">{ind+1}</th>
+      {/* onClick={selectLine} className={selected}> */}
+      <th scope="row">{ind + 1}</th>
       <td>{item.name}</td>
       <td>{item.class}</td>
       <td>{item.photos && "yes"}</td>
